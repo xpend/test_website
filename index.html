@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GTM + GA4</title>
+
+  <!-- Declare dataLayer and set user_id BEFORE GTM to include it in initial pageview -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'user_id': '12345' // TODO: replace with your real user id
+    });
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K483HWLZ');
+  </script>
+  <!-- End GTM -->
+</head>
+<body>
+<!-- GTM (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K483HWLZ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End GTM (noscript) -->
+
+<p>Hello world! This is HTML5 Boilerplate.</p>
+
+<script src="js/app.js"></script>
+
+<!-- Example: later in the page, emit a custom event with the same user_id -->
+<script>
+  dataLayer.push({
+    'event': 'userData',
+    'user_id': '12345' // same dynamic id if available here
+  });
+</script>
+</body>
+</html>
